@@ -1,26 +1,52 @@
-it('Check funcionality of tab', () => {
-  cy.get('#services-tabs').find('li').then(tabButtons => {
-    cy.wrap(tabButtons)
-      .first()
-      .get('#services-citizens')
-      .should('contain', "Dokumenty i dane osobowe")
+describe('Tab functionality', () => {
+	
+  beforeEach('Open website', () => {
+		cy.visit('/')
+	})
 
-    cy.wrap(tabButtons)
-      .eq(1)
-      .click()
-      .get('#services-business')
-      .should('contain', "Tarcza Antykryzysowa")
+	it('Should load all tabs', () => {
+		cy.fixture('tabs.json').then((data) => {
+      const numberOfKeywords = data.keywords.length
+      const idTabList = '#services-tabs'
+      
+      cy.get(idTabList)
+        .invoke('text')
+        .then(text => {
+          data.keywords.forEach(keyword => {
+            expect(text).to.contain(keyword)
+          })
+			})
 
-    cy.wrap(tabButtons)
-      .eq(2)
-      .click()
-      .get('#services-officials')
-      .should('contain', "Sprawy publiczne")
+      cy.get('.tab-content').then(($tabs) => {
+        const numberOfTabs = $tabs.length
+        expect(numberOfTabs).to.equal(numberOfKeywords)
+      })
+    })
+	})
 
-    cy.wrap(tabButtons)
-      .eq(3)
-      .click()
-      .get('#services-farmer')
-      .should('contain', "Wsparcie finansowe, dofinansowania do działalności")
+  it('Should redirect to correct tab and should load content of tab', () => {
+    cy.fixture('tabContentServices.json').then((data) => {
+      
+      data.tabs.forEach(tab => {
+        const tabId = tab.tabId
+        const numberOfExpectedTabs = tab.tabContent.length
+        const servicesId = tab.servicesId
+        
+        cy.get(tabId).click()
+        cy.get(servicesId)
+          .invoke('text')
+          .then(text => {
+            tab.tabContent.forEach(object => {
+              expect(text).to.contain(object)
+            })
+          })
+        
+        
+        cy.get(servicesId).find('li').then(($tabs) => {
+          const numberOfContentTabs = $tabs.length
+          expect(numberOfContentTabs).to.equal(numberOfExpectedTabs)
+        }) 
+      })
+    })
   })
 })

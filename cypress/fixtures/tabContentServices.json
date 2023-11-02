@@ -1,0 +1,52 @@
+{
+    "tabs": [
+        {
+           "tabId": "#business-tab",
+           "servicesId": "#services-business",
+           "tabContent": [
+            "Tarcza Antykryzysowa",
+            "Zakładanie firmy",
+            "Rozwój firmy",
+            "Pracownicy w firmie",
+            "Podatki i księgowość",
+            "Ubezpieczenia społeczne",
+            "Sprawy urzędowe",
+            "Obowiązki przedsiębiorcy",
+            "Zezwolenia, koncesje, rejestry",
+            "Uprawnienia zawodowe",
+            "Zmiany w firmie",
+            "Zawieszenie i wznowienie",
+            "Zamykanie firmy",
+            "Sprzedaż i marketing",
+            "Kontrahenci i klienci",
+            "Handel zagraniczny",
+            "Prowadzenie biznesu w UE",
+            "Inwestycje budowlane",
+            "Cudzoziemcy w Polsce"
+            ]
+        },
+        {
+            "tabId": "#citizens-tab",
+            "servicesId": "#services-citizens",
+            "tabContent": [
+                "Dokumenty i dane osobowe",
+                "Edukacja",
+                "Kierowcy i pojazdy",
+                "Meldunek i wybory",
+                "Nieruchomości i środowisko",
+                "Podatki",
+                "Pomoc prawna",
+                "Praca i biznes",
+                "Rodzina i małżeństwo",
+                "Wojsko i bezpieczeństwo",
+                "Wyjazdy i wypoczynek",
+                "Zasiłki i pomoc finansowa",
+                "Zaświadczenia i odpisy",
+                "Zdrowie i ubezpieczenia społeczne",
+                "Cudzoziemiec w Polsce"
+            ]
+
+        }
+    ]
+    
+}

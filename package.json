@@ -1,14 +1,17 @@
 {
-  "name": "exlabs-zadanie",
-  "version": "1.0.0",
-  "description": "Automation test for gov.pl",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Bartek Szpura",
-  "license": "ISC",
-  "devDependencies": {
-    "cypress": "^13.3.3"
-  }
+	"name": "exlabs-zadanie",
+	"version": "1.0.0",
+	"description": "Automation test for gov.pl",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Bartek Szpura",
+	"license": "ISC",
+	"devDependencies": {
+		"cypress": "^13.3.3"
+	},
+	"dependencies": {
+		"prettier": "^3.0.3"
+	}
 }
